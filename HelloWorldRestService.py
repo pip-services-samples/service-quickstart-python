@@ -22,12 +22,5 @@ class HelloWorldRestService(RestService):
         self.register_route(method="GET", route=self._route, handler=self.greeting)
 
     def greeting(self, name):
-        status = Parameters.from_tuples("id", id,
-                                        "name", name,
-                                        "description", description,
-                                        "start_time", StringConverter.to_string(self._start_time),
-                                        "current_time", StringConverter.to_string(datetime.datetime.now()),
-                                        "uptime", uptime,
-                                        "properties", properties,
-                                        "components", components)
-        self.send_result(self._controller.greeting(name))
+        result = Parameters.from_tuples("name", self._controller.greeting(name))
+        self.send_result(result)

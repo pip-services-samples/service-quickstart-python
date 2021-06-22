@@ -6,6 +6,7 @@ from pip_services3_components.build import Factory
 from HelloWorldController import HelloWorldController
 from HelloWorldRestService import HelloWorldRestService
 
+
 class HelloWorldServiceFactory(Factory):
     def __init__(self):
         super(HelloWorldServiceFactory, self).__init__()

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import bottle
 from pip_services3_commons.refer import Descriptor
 from pip_services3_commons.validate import Schema
 from pip_services3_rpc.services import RestService
@@ -23,6 +23,7 @@ class HelloWorldRestService(RestService):
     def register(self):
         self.register_route(method="GET", route="/greeting", schema=Schema(), handler=self.greeting)
 
-    def greeting(self, name):
+    def greeting(self):
+        name = bottle.request.query.get('name')
         result = self._controller.greeting(name)
         return self.send_result(result)

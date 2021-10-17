@@ -1,15 +1,3 @@
-iso8601
-PyYAML
-pystache
-pytest
-numpy
-pytz
-bottle
-pybars3
-requests
-pymongo
-netifaces==0.10.9
- 
 pip_services3_commons
 pip_services3_components
 pip_services3_container
